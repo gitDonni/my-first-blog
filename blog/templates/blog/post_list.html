@@ -8,10 +8,12 @@
 <div>
     <h1>Django blog</h1>
 </div>
+{% for post in posts %}
 <div>
-    <p>published: 15.05.2024, 22:58</p>
-    <h2><a href="">My first post</a></h2>
-    <p>some text. text. text. text</p>
+    <p>published: {{ post.published_date }}</p>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
 </div>
+{% endfor %}
 </body>
 </html>
